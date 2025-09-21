@@ -29,7 +29,6 @@ env/
 # Data files (grandes)
 # ------------------------------
 data/
-*.csv
 *.tsv
 *.hdf5
 *.h5
