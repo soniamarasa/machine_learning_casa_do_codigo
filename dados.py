@@ -1,5 +1,6 @@
 import csv
 
+
 def carregar_acessos():
     X = []
     Y = []
@@ -8,6 +9,19 @@ def carregar_acessos():
     next(leitor)  # -> não le a primeira linha (remove os cabeçalhos)
     for home, como_funciona, contato, comprou in leitor:
         dado = [int(home), int(como_funciona), int(contato)]
+        X.append(dado)
+        Y.append(int(comprou))
+    return X, Y
+
+
+def carregar_buscas():
+    X = []
+    Y = []
+    arquivo = open("buscas.csv", "r")
+    leitor = csv.reader(arquivo)
+    next(leitor)  # -> não le a primeira linha (remove os cabeçalhos)
+    for home, busca, logado, comprou in leitor:
+        dado = [int(home), busca, int(logado)]
         X.append(dado)
         Y.append(int(comprou))
     return X, Y
