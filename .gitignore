@@ -1,0 +1,60 @@
+# ------------------------------
+# Python
+# ------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ------------------------------
+# Virtual environments
+# ------------------------------
+venv/
+env/
+.venv/
+.env/
+
+# ------------------------------
+# Jupyter Notebook checkpoints
+# ------------------------------
+.ipynb_checkpoints/
+
+# ------------------------------
+# Logs and databases
+# ------------------------------
+*.log
+*.sqlite3
+*.db
+
+# ------------------------------
+# Data files (grandes)
+# ------------------------------
+data/
+*.csv
+*.tsv
+*.hdf5
+*.h5
+*.npy
+*.npz
+*.pkl
+*.joblib
+
+# ------------------------------
+# IDEs and editors
+# ------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------------
+# OS generated files
+# ------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# Outputs / Results
+# ------------------------------
+*.out
+*.tmp
+*.bak
