@@ -3,27 +3,23 @@ from sklearn.naive_bayes import MultinomialNB
 from dados import carregar_acessos
 
 X, Y = carregar_acessos()
+treino_dados = X[:90]
+treino_marcacoes = Y[:90]
+teste_dados = X[-9:]
+teste_marcacoes = Y[-9:]
 
-# print(Y)
-# print(X)
+# print(treino_marcacoes)
 
 modelo = MultinomialNB()
-modelo.fit(X, Y)
-misterioso1 = [[1, 0, 1]]
-misterioso2 = [[0, 1, 0]]
-misterioso3 = [[1, 0, 0]]
-misterioso4 = [[1, 1, 0]]
-misterioso5 = [[1, 1, 1]]
+modelo.fit(treino_dados, treino_marcacoes)
 
-resultado = modelo.predict(X) # [misterioso1[0], misterioso2[0], misterioso3[0], misterioso4[0], misterioso5[0]]
+resultado = modelo.predict(teste_dados)
 
-print(resultado)
-print(Y)
 
-diferencas = resultado - Y
+diferencas = resultado - teste_marcacoes
 acertos = [d for d in diferencas if d == 0]
 total_de_acertos = len(acertos)
-total_de_elementos = len(Y)
+total_de_elementos = len(teste_dados)
 taxa_de_acerto = 100.0 * total_de_acertos / total_de_elementos
 
 # saída
